@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'assignments/new'
-  get 'assignments/create'
-  get 'work_orders/new'
-  get 'workers/new'
+  # root to: 'assignments#index'
+  resources :assignments, only: [:index, :new, :create]
+  resources :work_orders, only: [:new, :create]
+  resources :workers, only: [:new, :create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
