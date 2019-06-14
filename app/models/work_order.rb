@@ -1,14 +1,12 @@
+# The WorkOrder model handles work order validations and associations
 class WorkOrder < ApplicationRecord
-  NUMBER_OF_PERMITTED_WORKERS = 5
-  has_many :workers, dependent: :destroy, before_add: :validate_worker_limit
+  has_many :assignments
 
   validates :title, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { maximum: 600 }
   validates :deadline, presence: true
 
-  private
-
-  def validate_worker_limit(worker)
-    raise Exception.new if workers.size >= NUMBER_OF_PERMITTED_WORKERS
+  def work_order_limit
+    5
   end
 end

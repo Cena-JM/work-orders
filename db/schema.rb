@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_132557) do
+ActiveRecord::Schema.define(version: 2019_06_13_204849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "work_order_id"
+    t.bigint "worker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_order_id"], name: "index_assignments_on_work_order_id"
+    t.index ["worker_id"], name: "index_assignments_on_worker_id"
+  end
 
   create_table "work_orders", force: :cascade do |t|
     t.text "title"
@@ -27,11 +36,10 @@ ActiveRecord::Schema.define(version: 2019_06_13_132557) do
     t.text "name"
     t.text "company_name"
     t.text "email"
-    t.bigint "work_order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["work_order_id"], name: "index_workers_on_work_order_id"
   end
 
-  add_foreign_key "workers", "work_orders"
+  add_foreign_key "assignments", "work_orders"
+  add_foreign_key "assignments", "workers"
 end

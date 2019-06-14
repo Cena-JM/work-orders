@@ -20,23 +20,9 @@ class WorkersController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  def update
-    @worker = Worker.find(params[:id])
-    if @worker.update_attributes(work_params)
-      redirect_to @worker
-      flash[:success] = "Worker assigned to work order"
-    else
-      render action: :edit
-    end
-  end
-
   private
 
   def worker_params
     params.require(:worker).permit(:name, :company_name, :email)
-  end
-
-  def work_params
-    params.require(:worker).permit(:work_order_id)
   end
 end
