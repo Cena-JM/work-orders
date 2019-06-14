@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # root to: 'assignments#index'
+  root to: 'assignments#index'
   resources :assignments, only: [:index, :new, :create]
   resources :work_orders, only: [:new, :create]
   resources :workers, only: [:new, :create, :destroy]

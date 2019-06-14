@@ -1,6 +1,7 @@
 class AssignmentsController < ApplicationController
   def index
-    
+    assignments = Assignment.left_outer_joins(:work_order).where(worker_id: params[:worker_id]).order(deadline: :desc)
+    render html: assignments
   end
 
   def new
