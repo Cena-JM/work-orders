@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WorkOrders</title>
+    <title>PrivateEvents</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <div class="container">
+    <nav>
+      <%= link_to 'Home', root_path %> | 
+      <%= link_to 'Workers', workers_path %> | 
+      <%= link_to 'Work-Orders', work_orders_path %>
+    </nav>
+    <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message) %>
+      <% end %>
     <%= yield %>
+    </div>
+    <footer>
+      <%= link_to 'Create-Assignment', new_assignment_path %> | 
+      <%= link_to 'Create-Worker', new_worker_path %> | 
+      <%= link_to 'Create-Worker order', new_work_order_path %>
+    </footer>
   </body>
 </html>

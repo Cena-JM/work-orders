@@ -1,7 +1,6 @@
 class AssignmentsController < ApplicationController
   def index
-    assignments = Assignment.left_outer_joins(:work_order).where(worker_id: params[:worker_id]).order(deadline: :desc)
-    render html: assignments
+    @assignments = Assignment.all
   end
 
   def new
@@ -9,13 +8,13 @@ class AssignmentsController < ApplicationController
   end
 
   def create
-    @assignment = assignment.build(assignment_params)
+    @assignment = Assignment.create(assignment_params)
     if @assignment.save
       flash[:success] = 'Assignment successfully added'
     else
       flash[:alert] = 'Assignment couldn\'t be created'
     end
-    redirect_back(fallback_location: root_path)
+    redirect_to assignments_path
   end
 
   private

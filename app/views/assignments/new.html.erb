@@ -1,2 +1,12 @@
-<h1>Assignments#new</h1>
-<p>Find me in app/views/assignments/new.html.erb</p>
+<h1>Create Assignment</h1>
+
+<%= form_for(@assignment) do |f| %>
+
+<%= f.label :work_order_id %><br>
+<%= f.text_field :work_order_id %><br>
+
+<%= f.label :worker_id %><br>
+<%= f.text_field :worker_id %><br><br>
+
+<%= f.submit "Create my assignment" %>
+<% end %>

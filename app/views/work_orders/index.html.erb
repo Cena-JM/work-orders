@@ -1,0 +1,9 @@
+<h1>All work orders</h1>
+
+<ul>
+  <% @work_orders.each do |work_order| %>
+    <li>
+      <%= link_to work_order.title, work_order %>
+    </li>
+  <% end %>
+</ul>

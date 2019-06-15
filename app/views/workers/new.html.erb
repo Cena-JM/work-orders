@@ -1,2 +1,15 @@
-<h1>Workers#new</h1>
-<p>Find me in app/views/workers/new.html.erb</p>
+<h1>Enter worker details</h1>
+
+<%= form_for(@worker) do |f| %>
+
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+
+<%= f.label :company_name %><br>
+<%= f.text_field :company_name %><br>
+
+<%= f.label :email %><br>
+<%= f.email_field :email %><br>
+
+<%= f.submit "Create my worker" %>
+<% end %>
