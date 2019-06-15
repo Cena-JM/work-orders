@@ -7,6 +7,10 @@ by one or more workers. One or more workers are ‘assigned’ to an order. A ma
 
 [Musa Jabbaaru Ntege](https://github.com/Cena-JM)<br>
 
+## Heroku version
+
+https://cryptic-lowlands-18026.herokuapp.com/
+
 ## Requirements
 
 Ruby 2.6.2
