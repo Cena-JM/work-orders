@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAssignments < ActiveRecord::Migration[5.2]
   def change
     create_table :assignments do |t|
@@ -6,6 +8,6 @@ class CreateAssignments < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :assignments, [:worker_order_id, :worker_id], unique: true
+    add_index :assignments, %i[worker_order_id worker_id], unique: true
   end
 end

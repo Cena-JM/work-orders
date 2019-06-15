@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # The assignment model handles assignment validations and associations.
 class Assignment < ApplicationRecord
   belongs_to :work_order

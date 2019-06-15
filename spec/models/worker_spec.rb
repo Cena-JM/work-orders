@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Worker, type: :model do
   subject { create(:worker) }
 
   describe 'validations' do
-
     context 'attributes' do
       it { expect(subject).to be_valid }
     end

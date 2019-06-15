@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AssignmentsController < ApplicationController
   def index
     @assignments = Assignment.all

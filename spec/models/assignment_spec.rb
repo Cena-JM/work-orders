@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Assignment, type: :model do
   subject { create(:assignment) }
 
   describe 'validations' do
-
     context 'attributes' do
       it { expect(subject).to be_valid }
     end

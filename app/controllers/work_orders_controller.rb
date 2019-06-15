@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class WorkOrdersController < ApplicationController
   def index
-    @work_orders = WorkOrder.all
+    @work_orders = WorkOrder.order('deadline ASC')
   end
 
   def show

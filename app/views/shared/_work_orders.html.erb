@@ -2,7 +2,7 @@
   <ol>
     <% @worker.work_orders.each do |work_order| %>
       <li>
-        <%= link_to work_order.title, work_order %>
+        <%= link_to work_order.title, work_order %> - 
         <%= work_order.deadline %>
       </li>
     <% end %>

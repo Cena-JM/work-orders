@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # The WorkOrder model handles work order validations and associations
 class WorkOrder < ApplicationRecord
   has_many :assignments
@@ -10,4 +12,11 @@ class WorkOrder < ApplicationRecord
   def work_order_limit
     5
   end
+
+  scope :with_workers,
+        lambda {
+          includes(
+            :work_orders
+          )
+        }
 end
