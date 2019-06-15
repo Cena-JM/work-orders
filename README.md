@@ -1,24 +1,42 @@
-# README
+# Work Orders
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app that has work orders and workers. A work order is a job to be completed 
+by one or more workers. One or more workers are ‘assigned’ to an order. A max of 5 workers can work on one order.
 
-Things you may want to cover:
+## Contributors
 
-* Ruby version
+[Musa Jabbaaru Ntege](https://github.com/Cena-JM)<br>
 
-* System dependencies
+## Requirements
 
-* Configuration
+Ruby 2.6.2
+Postgresql 1.1.4
+Ruby on Rails 5.2.3
+Rspec
 
-* Database creation
+## How it works
 
-* Database initialization
+The app has three models (worker, work_order, assignment). Workers are connected to work orders through assignments. Each work order can be assigned not more than five workers and workers can be assigned to multiple work orders.
 
-* How to run the test suite
+## Getting started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get started with the app, clone the repo
 
-* Deployment instructions
+```
 
-* ...
+and then install the needed gems:
+```
+$ bundle install --without production
+```
+
+Next, migrate the database:
+
+```
+$ rails db:migrate
+```
+
+Finally, run the server and have fun:
+
+```
+$ rails server
+```

@@ -4,7 +4,8 @@ class WorkersController < ApplicationController
   end
 
   def show
-    @worker = Worker.with_work_orders.find(params[:id])
+    @worker = Worker.find(params[:id])
+    @work_orders = @worker.work_orders.order('deadline ASC')
   end
 
   def new

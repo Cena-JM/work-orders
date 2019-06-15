@@ -1,6 +1,6 @@
-<% if @worker.work_orders.any? %>
+<% if @work_orders.any? %>
   <ol>
-    <% @worker.work_orders.each do |work_order| %>
+    <% @work_orders.each do |work_order| %>
       <li>
         <%= link_to work_order.title, work_order %> - 
         <%= work_order.deadline %>
