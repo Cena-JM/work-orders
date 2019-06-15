@@ -8,6 +8,6 @@ class CreateAssignments < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :assignments, [:worker_order_id, :worker_id], unique: true
+    # add_index :assignments, %i[worker_order worker], unique: true
   end
 end
