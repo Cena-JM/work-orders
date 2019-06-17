@@ -11,11 +11,4 @@ class Worker < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-
-  scope :with_work_orders,
-        lambda {
-          includes(
-            :work_orders
-          )
-        }
 end
